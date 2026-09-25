@@ -24,7 +24,7 @@ public class MainHook implements IXposedHookLoadPackage {
                     String key = (String) param.args[0];
                     int currentValue = (Integer) param.args[1];
 
-                    if (MediaFormat.KEY_BITRATE.equals(key)) {
+                    if (MediaFormat.KEY_BIT_RATE.equals(key)) {
                         param.args[1] = 5000000; 
                     }
                     else if (MediaFormat.KEY_WIDTH.equals(key) && currentValue < 1080) {
