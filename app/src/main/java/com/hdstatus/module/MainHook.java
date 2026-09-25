@@ -9,9 +9,10 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 public class MainHook implements IXposedHookLoadPackage {
     @Override
     public void handleLoadPackage(LoadPackageParam lpparam) throws Throwable {
-        if (!lpparam.packageName.equals("com.whatsapp")) {
+                if (!lpparam.packageName.equals("com.whatsapp") && !lpparam.packageName.equals("com.whatsapp.w4b")) {
             return;
         }
+
 
         XposedHelpers.findAndHookMethod(
             "android.media.MediaFormat", 
